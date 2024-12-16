@@ -32,10 +32,12 @@ int main() {
     while ( cal != 0 ) {
         printf( "%d",cal ) ;
         if ( cal != 1 ) {
-            printf(" x ") ;
+            printf( " x " ) ;
             sum *= cal ;
         }//end if 
+        
         cal = cal - 1 ;
+        
     }//end while 
     
     printf( "\n%d! = %d" , input , sum ) ;
