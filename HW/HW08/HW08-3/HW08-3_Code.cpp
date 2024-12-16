@@ -21,10 +21,10 @@ int main() {
         printf("%d", sum ) ;
         n += sum ;
     } else {
-        for (int i = 0; i < input; i++) {
+        for ( int i = 0 ; i < input ; i++ ) {
             sum = before + after ;
             printf( "%d", sum ) ;
-            printf( i + 1 != input ? " + " : "" ) ; //ใช้ตรวจเงื่อนไขการวาง +
+            printf( i + 1 != input ? " + " : "" ) ;   //ใช้ตรวจเงื่อนไขการวาง +
             before = after ;
             after = sum ;
             n += sum ;
