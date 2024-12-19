@@ -51,7 +51,7 @@ int* GetMatrix( int *row, int *col ) {
         return NULL ;
     }//end if
 
-    printf( "Enter matrix elements:\n" ) ;
+    printf( "\nEnter matrix elements:\n" ) ;
     
     for ( int i = 0 ; i < *row ; i++ ) {                      //รับค่าข้อมูลเมทริกซ์จากผู้ใช้
         for ( int j = 0 ; j < *col ; j++ ) {
@@ -62,7 +62,7 @@ int* GetMatrix( int *row, int *col ) {
         }//end for
     }//end for
 
-    printf( "The entered matrix is:\n" ) ;     //แสดงผลเมทริกซ์
+    printf( "\nThe entered matrix is:\n" ) ;     //แสดงผลเมทริกซ์
     for ( int i = 0 ; i < *row ; i++ ) {
         for ( int j = 0 ; j < *col ; j++ ) {
             printf( "%d ", arr[ i ][ j ] ) ;
