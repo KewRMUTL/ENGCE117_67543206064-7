@@ -42,13 +42,13 @@ int *GetSet( int *namae ) {
     scanf( "%d" , namae ) ;
     
     printf( "Enter the elements : " ) ;
-    for ( int i = 0; i < *namae ; i++ ) {
+    for ( int i = 0 ; i < *namae ; i++ ) {
         scanf( "%d" , &elements[ i ] ) ;
     } //end for รับค่า
     
     printf( "Number of elements : %d\n" , *namae ) ;
 
-    for ( int i = 0; i < *namae; i++ ) {
+    for ( int i = 0 ; i < *namae ; i++ ) {
         printf( "%d " , elements[ i ] ) ;
     }//end for แสดงค่า
     return 0 ;
