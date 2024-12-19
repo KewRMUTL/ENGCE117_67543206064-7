@@ -28,25 +28,28 @@ Number of elements: 3
 
 #include <stdio.h>
 
-int GetSet( int *arr[] ) ;
+int GetSet( int *arr[] ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 
 int main() {
-    int *data[ 100 ] , num ;
+    int *data[ 100 ], num ;
     num = GetSet( data ) ;
     return 0 ;
 }//end function main
 
 int GetSet( int *arr[] ) {
     int n ;
-    printf( "Enter the number of elements:" ) ;
+    printf( "Enter the number of elements: " ) ;
     scanf( "%d" , &n ) ;
     printf( "Enter the elements: " ) ;
     for ( int i = 0 ; i < n ; i++ ) {
         scanf( "%d" , &arr[ i ] ) ;
-    } for ( int i = 0 ; i < n ; i++ ) {
+    }//end for
+
+    printf( "Number of elements: %d\n", n ) ;
+    for ( int i = 0 ; i < n ; i++ ) {
         printf( "%d " , arr[ i ] ) ;
     }//end for
-    
+
     return 0 ;
     
 }//end function GetSet
