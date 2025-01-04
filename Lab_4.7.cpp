@@ -55,7 +55,7 @@ void saveNode( struct studentNode *child, const char n[], int a, float g ) {
 void GoNext( struct studentNode **now ) {
     if ( *now != NULL ) {
         printf( "%s\n" , ( *now ) -> name ) ;
-        if ( ( *now )->next != NULL) {
+        if ( ( *now ) -> next != NULL) {
             *now = ( *now ) -> next ;
         } else {
             printf( "End of List" ) ;
