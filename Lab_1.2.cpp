@@ -28,7 +28,7 @@ Output
 #include <stdio.h>
 #include <string.h>
 
-void GetSet( int [], int * ) ;
+void GetSet( int [], int * ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address //Pass by value ตัวแปรธรรมดา
 
 int main() {
     int data[ 500 ] , n = 0 ;
@@ -43,10 +43,10 @@ void GetSet( int a[] , int *e ) {
 
     printf( "Enter data: " ) ;
     for ( int i = 0 ; i < *e ; i++ ) {
-        scanf( "%d" , &a[i] ) ;
+        scanf( "%d" , &a[ i ] ) ;
     }//end for
     
-    for ( int i = 0 ; i < *e ; i++) {
+    for ( int i = 0 ; i < *e ; i++ ) {
         printf( "%d " , a[ i ] ) ;
     }//end for print a
     
