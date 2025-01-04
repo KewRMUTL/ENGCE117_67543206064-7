@@ -21,12 +21,12 @@ int main() {
 
 #include <stdio.h>
 
-void go( int **p, int *z ) ;
+void go( int **p, int *z ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 
 int main() {
-    int *a, b = 10, c = 20;
+    int *a, b = 10, c = 20 ;
 
-    // ครั้งที่ 1 ให้ `a` ชี้ไปยัง `b`
+    //ครั้งที่ 1 ให้ `a` ชี้ไปยัง `b`
     go( &a, &b ) ;
     printf( "%d %p %p\n", *a, ( void * )a, ( void * )&a ) ;
 
@@ -38,8 +38,7 @@ int main() {
     
 }//end function main
 
-// ฟังก์ชัน go ใช้เปลี่ยนพอยน์เตอร์ให้ชี้ไปยังที่อยู่ใหม่
-void go(int **p, int *z) {
-    *p = z; // เปลี่ยนให้พอยน์เตอร์ **p ชี้ไปยังที่อยู่ที่ z ชี้อยู่
+void go( int **p, int *z ) {     //ฟังก์ชัน go ใช้เปลี่ยนพอยน์เตอร์ให้ชี้ไปยังที่อยู่ใหม่
+    *p = z ;                     //เปลี่ยนให้พอยน์เตอร์ **p ชี้ไปยังที่อยู่ที่ z ชี้อยู่
     
 }//end void go
