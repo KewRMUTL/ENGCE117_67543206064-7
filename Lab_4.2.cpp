@@ -1,4 +1,4 @@
-/*
+ /*
 โจทย์
 
 เมื่อพอยน์เตอร์ 2 ระดับถูกประกาศใน main() แล้วฟังก์ชันย่อยจะเปลี่ยนการชี้ไปที่อื่นๆ ได้อย่างไร? และจะนำข้อมูลที่ชี้อยู่มาใช้งานในฟังก์ชันได้อย่างไร?
@@ -22,29 +22,25 @@ int main() {
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-void go( int ***p, int **z ) ;
+void go( int ***p, int **z ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 
 int main() {
-    int b = 10 ;     //สร้างตัวแปร b
-    int c = 20 ;     //สร้างตัวแปร c
+    int *b = ( int * ) malloc( sizeof( int ) ) ;     //ขอพื้นที่ 4 ไบต์ สำหรับตัวแปร int
+    *b = 10 ;
+    int *c = ( int * ) malloc( sizeof( int ) ) ;     //ขอพื้นที่ 4 ไบต์ สำหรับตัวแปร int
+    *c = 20 ;
+    int **a ;
 
-    int *pb = &b ;   //ตัวชี้ pb ชี้ไปยัง b
-    int *pc = &c ;   //ตัวชี้ pc ชี้ไปยัง c
-
-    int **a ;        //ตัวชี้ระดับสอง
-
-    go( &a, &pb ) ;  //ให้ a ชี้ไปยัง pb
-    printf( "**a = %d, *a = %p, a = %p, &a = %p\n", **a, ( void* )*a, ( void* )a, ( void* )&a ) ;
-
-    go( &a, &pc ) ;  //ให้ a ชี้ไปยัง pc
-    printf( "**a = %d, *a = %p, a = %p, &a = %p\n", **a, ( void* )*a, ( void* )a, ( void* )&a ) ;
+    go( &a, &b ) ;
+    printf( "**a = %d, *a = %p, a = %p, &a = %p \n", **a, *a, a, &a ) ;
+    go( &a, &c ) ;
+    printf( "**a = %d, *a = %p, a = %p, &a = %p \n", **a, *a, a, &a ) ;
 
     return 0 ;
-    
-}//end function main
+}//end function
 
 void go( int ***p, int **z ) {
-    *p = z ;         //ให้ *p ชี้ไปยังที่อยู่ของ z ซึ่งเป็น int**
-    
-}//end void go
+    *p = z ; 
+}//end go
