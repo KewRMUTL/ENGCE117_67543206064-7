@@ -33,26 +33,27 @@ struct student {
     int age ;
     char sex ;
     float gpa ;
-} ; //end struct student
+} ;
 
-void upgrade( struct student *child ) ;
+void upgrade( struct student *child ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 
 int main() {
     struct student aboy ;
     aboy.sex = 'M' ;
     aboy.gpa = 3.00 ;
     upgrade( &aboy ) ;
-    printf( "%.2f", aboy.gpa ) ;
-    
+    printf( "%.2f", aboy.gpa ) ;     //GPA ไม่เปลี่ยนแปลงเพราะ pass by value
     return 0 ;
-    
-}//end function main
+}//end function 
 
 void upgrade( struct student *child ) {
-    if ( child -> sex == 'M' ) {
-        child -> gpa *= 1.10 ;     //+10% for M
-    } else if ( child -> sex == 'F' ) {
-        child -> gpa *= 1.20 ;     //+20% for F
-    }//end if
-    
-}//end void upgrade
+    if ( child -> gpa < 4.00 ) {
+        if ( child -> sex == 'M') {
+            child -> gpa = ( child -> gpa  * 0.1 ) + child -> gpa ;     //เพิ่ม 10% ให้ผู้ชาย (0.1 = 10%)
+        } else if ( child -> sex == 'F' ) {
+            child -> gpa = ( child -> gpa  * 0.2 ) + child -> gpa ;     //เพิ่ม 20% ให้ผู้หญิง (0.2 = 20%)
+        }//end if check sex
+
+    }//end if Gpa ต้องตำกว่า 4.00
+
+}//end upgrade
