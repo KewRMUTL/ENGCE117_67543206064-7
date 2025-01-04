@@ -35,7 +35,7 @@ struct student {
     float gpa ;
 } ;
 
-struct student upgrade( struct student child ) ;
+struct student upgrade( struct student child ) ;     //Pass by Value
 
 int main() {
     struct student aboy ;
