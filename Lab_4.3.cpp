@@ -17,7 +17,7 @@ struct studentNode {
     struct studentNode *next ;
 } ;
 
-void SaveNode( struct studentNode *child, char n[], int a, char s, float g ) ;
+void SaveNode( struct studentNode *child, char n[], int a, char s, float g ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 void GoNext1( struct studentNode *walk ) ;
 
 int main() {
