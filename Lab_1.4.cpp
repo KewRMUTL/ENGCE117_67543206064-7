@@ -28,7 +28,7 @@ Number of elements: 3
 
 #include <stdio.h>
 
-int GetSet( int *arr[] ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
+int GetSet( int *arr[] ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address //Pass by value ตัวแปรธรรมดา
 
 int main() {
     int *data[ 100 ], num ;
