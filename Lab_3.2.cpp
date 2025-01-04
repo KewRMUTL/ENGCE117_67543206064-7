@@ -53,7 +53,10 @@ void upgrade( struct student *child ) {
         } else if ( child -> sex == 'F' ) {
             child -> gpa = ( child -> gpa  * 0.2 ) + child -> gpa ;     //เพิ่ม 20% ให้ผู้หญิง (0.2 = 20%)
         }//end if check sex
-
     }//end if Gpa ต้องตำกว่า 4.00
 
-}//end upgrade
+    if ( child -> gpa > 4.00 ) {
+        child -> gpa = 4.00 ;
+    }//end if จะไม่เพิ่มเกรดเกิน 4.00
+
+}//end function upgrade
