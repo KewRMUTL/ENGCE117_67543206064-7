@@ -51,7 +51,7 @@ void upgrade( struct student child ) {
             child.gpa = ( child.gpa  * 0.1 ) + child.gpa ;     //เพิ่ม 10% ให้ผู้ชาย (0.1 = 10%)
         } else if ( child.sex == 'F' ) {
             child.gpa = ( child.gpa  * 0.2 ) + child.gpa ;     //เพิ่ม 20% ให้ผู้หญิง (0.2 = 20%)
-        }//end if check เพศ
+        }//end if check sex
 
     }//end if Gpa ต้องตำกว่า 4.00
 
