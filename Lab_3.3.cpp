@@ -33,7 +33,7 @@ struct student {
     int age ;
     char sex ;
     float gpa ;
-} ; //end struct student
+} ;
 
 struct student upgrade( struct student child ) ;
 
@@ -43,18 +43,23 @@ int main() {
     aboy.gpa = 3.00 ;
     aboy = upgrade( aboy ) ;
     printf( "%.2f", aboy.gpa ) ;
-    
     return 0 ;
-    
-}//end function main
+}//end function
 
-struct student upgrade( struct student child ) {     //Pass by value
-    if ( child.sex == 'M' ) {
-        child.gpa *= 1.10 ;
-    } else if ( child.sex == 'F' ) {
-        child.gpa *= 1.20 ;
-    }//end if
+struct student upgrade( struct student child ) {
+     if ( child.gpa < 4.00 ) {
+        if ( child.sex == 'M') {
+            child.gpa = ( child.gpa  * 0.1 ) + child.gpa ;
+        } else if ( child.sex == 'F' ) {
+            child.gpa = ( child.gpa  * 0.2 ) + child.gpa ;
+        }//end if check sex
+
+    }//end if GPA ต้องตำกว่า 4.00
+
+    if ( child.gpa > 4.00 ) {
+        child.gpa = 4.00 ;
+    }//end if จะไม่เพิ่มเกรดเกิน 4.00
     
     return child ;
-    
+
 }//end struct student upgrade
