@@ -24,14 +24,14 @@ struct student {     //โครงสร้าง student
     int age ;
 } ; //end struct student
 
-void GetStudent( struct student child[][ 10 ], int *room ) ;
+void GetStudent( struct student child[][ 10 ], int *room ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 
 int main() {
     struct student children[ 20 ][ 10 ] ;     //ห้องเรียนสูงสุด 20 ห้อง
     int group ;
     printf( "Enter number of groups : " ) ;
-    scanf( "%d", &group ) ;     //รับจำนวนห้องเรียน
-    GetStudent( children, &group ) ;     //เรียกใช้ฟังก์ชันเพื่อกรอกข้อมูล
+    scanf( "%d", &group ) ;                  //รับจำนวนห้องเรียน
+    GetStudent( children, &group ) ;         //เรียกใช้ฟังก์ชันเพื่อกรอกข้อมูล
     
     return 0 ;
     
@@ -43,12 +43,13 @@ void GetStudent( struct student child[][ 10 ], int *room ) {     //ฟังก�
         printf( "Room %d:\n", r + 1 ) ;
         for ( int s = 0 ; s < 10 ; s++ ) {
             printf( "Student %d: ", s + 1 ) ;
-            scanf( "%s", child[ r ][ s ].name ) ;     //รับชื่อ
+            scanf( "%s", child[ r ][ s ].name ) ;                //รับชื่อ
             printf( "Age: " ) ;
-            scanf( "%d", &child[ r ][ s ].age ) ;     //รับอายุ
+            scanf( "%d", &child[ r ][ s ].age ) ;                //รับอายุ
         }//end for นักเรียน 10 คน
         
         printf( "Room %d: 10 students entered.\n", r + 1 ) ;     //แสดงข้อความหลังกรอกข้อมูลครบ
+    
     }//end for จำนวนห้อง (Room)
     
 }//end void GetStudent
