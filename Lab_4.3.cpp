@@ -46,19 +46,19 @@ int main() {
 
     return 0 ;
 
-}//end function
+}//end function main
 
 void SaveNode( struct studentNode *child , char n[] , int a , char s , float g ) {
     strcpy( child -> name, n ) ;
     child -> age = a ;
     child -> sex = s ;
     child -> gpa = g ;
-}//end function
-
+}//end function SaveNode
 
 void GoNext1( struct studentNode *walk ) {
     if ( walk != NULL ) {
         walk = walk -> next ;     //ทำให้ walk ชี้ไปยังโหนดถัดไป
         printf( "%s %d %c %.2f" , walk -> name , walk -> age , walk -> sex , walk -> gpa ) ;
     }//end if
-}//end GoNext1
+    
+}//end function GoNext1
