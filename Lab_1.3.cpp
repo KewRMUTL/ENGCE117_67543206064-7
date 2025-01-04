@@ -27,29 +27,34 @@ Number of elements: 3
 
 #include <stdio.h>
 
-int *GetSet( int *namae ) ;
+int *GetSet( int *n ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address //Pass by value ตัวแปรธรรมดา
 
 int main() {
     int num ;
     GetSet( &num ) ;
+
     return 0 ;
+
 }//end function
 
-int *GetSet( int *namae ) {
-    int elements [100 ] ;
+
+int *GetSet( int *n ) {
+    int elements [ 100 ] ;
 
     printf( "Enter the number of elements: ") ;
-    scanf( "%d" , namae ) ;
+    scanf( "%d" , n ) ;
     
     printf( "Enter the elements : " ) ;
-    for ( int i = 0 ; i < *namae ; i++ ) {
+    for ( int i = 0 ; i < *n ; i++ ) {
         scanf( "%d" , &elements[ i ] ) ;
     } //end for รับค่า
     
-    printf( "Number of elements : %d\n" , *namae ) ;
+    printf( "Number of elements : %d\n" , *n ) ;
 
-    for ( int i = 0 ; i < *namae ; i++ ) {
-        printf( "%d " , elements[ i ] ) ;
+    for ( int i = 0 ; i < *n ; i++ ) {
+        printf( "%d ", elements[ i ] ) ;
     }//end for แสดงค่า
+
     return 0 ;
+
 }//GetSet
