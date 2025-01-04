@@ -15,7 +15,7 @@ struct studentNode {
     char sex ;
     float gpa ;
     struct studentNode *next ;
-} ;
+} ; //end struct studentNode
 
 void SaveNode( struct studentNode *child, char n[], int a, char s, float g ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 void GoNext2( struct studentNode **walk ) ;
@@ -46,18 +46,18 @@ int main() {
 
     return 0 ;
 
-}//end function
+}//end function main
 
 void SaveNode( struct studentNode *child, char n[], int a, char s, float g ) {
     strcpy( child -> name, n ) ;
     child -> age = a ;
     child -> sex = s ;
     child -> gpa = g ;
-}//end function
+}//end function SaveNode
 
 void GoNext2( struct studentNode **walk ) {
     if ( *walk != NULL ) {
         *walk = ( *walk )-> next ;
     }//end if
 
-}//end GoNext2
+}//end function GoNext2
