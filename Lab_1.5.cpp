@@ -32,57 +32,44 @@ Matrix (2x3):
 #include <stdio.h>
 #include <stdlib.h>
 
-void GetMatrix( int value[][ 5 ], int *row, int *col ) ;
+void GetMatrix( int value[][ 5 ], int *row, int *col ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address //Pass by value ตัวแปรธรรมดา
 
 int main() {
     int data[ 100 ][ 5 ], m, n ;
-    GetMatrix( data, &m, &n ) ;
+    GetMatrix( data, &m, &n ) ;        // เรียกใช้งานฟังก์ชันเพื่อรับข้อมูลจากผู้ใช้
     return 0 ;
-    
-}//end function main
+}//end function
 
-void GetMatrix(int value[][ 5 ], int *row, int *col ) {
+void GetMatrix( int value[][ 5 ], int *row, int *col ) {
     printf( "Enter the number of rows: " ) ;
-    scanf( "%d", row ) ;
+    scanf( "%d", row ) ;              // รับค่าจำนวน row
 
     printf( "Enter the number of columns: " ) ;
-    scanf( "%d", col ) ;
+    scanf( "%d", col ) ;              // รับค่าจำนวน col
 
-    // ตรวจสอบเงื่อนไขของเมทริกซ์
     if ( *row == 0 && *col == 0 ) {
-        printf( "Matrix:\n(empty)\n" ) ;
-        return ;
+        printf( "Matrix is empty.\n" ) ;
+        return ;                      // ออกจากฟังก์ชันทันทีถ้าขนาดไม่ถูกต้อง
     } else if ( *row == 0 || *col == 0 ) {
         printf( "Error: Invalid matrix dimensions.\n" ) ;
-        return ;
+        return ;                      // ออกจากฟังก์ชันทันทีถ้าขนาดไม่ถูกต้อง
     }//end if
 
-    printf( "Enter the matrix elements: " ) ;
-    int total_elements = ( *row ) * ( *col ) ;
-    int input_count = 0 ;
+    printf( "Enter the matrix elements:\n" ) ;
+    for ( int i = 0 ; i < *row ; i++ ) {      // รับค่าของเมทริกซ์
+        for (int j = 0 ; j < *col ; j++ ) {
+            scanf( "%d", &value[ i ][ j ] ) ;  // รับค่าของสมาชิกในเมทริกซ์
+        }//end for col
+    }//end for row
 
+    printf( "\nMatrix ( %d x %d ):\n", *row, *col ) ;     // แสดงผลเมทริกซ์
     for ( int i = 0 ; i < *row ; i++ ) {
         for ( int j = 0 ; j < *col ; j++ ) {
-            if ( scanf( "%d", &value[ i ][ j ] ) == 1 ) {
-                input_count++ ;
-            } else {
-                printf( "Error: Incorrect number of elements.\n" ) ;
-                exit( 1 ) ;
-            }//end if
-        }//end for
-    }//end for
+            printf( "%d ", value[ i ][ j ] ) ;  // แสดงค่าของสมาชิก
+        }//end for row
 
-    if ( input_count != total_elements ) {
-        printf( "Error: Incorrect number of elements.\n" ) ;
-        exit( 1 ) ;
-    }//end if
-
-    printf( "Matrix (%dx%d):\n", *row, *col ) ;
-    for ( int i = 0 ; i < *row ; i++ ) {
-        for ( int j = 0 ; j < *col ; j++ ) {
-            printf( "%d ", value[ i ][ j ] ) ;
-        }//end for
-        
         printf( "\n" ) ;
-    }//end for
-}//end for
+
+    }//end for col
+
+}//end GetMatrix
