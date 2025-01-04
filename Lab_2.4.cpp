@@ -41,7 +41,7 @@ count = 4
 #include <stdio.h>
 #include <string.h>
 
-void explode( char str1[], char splitter[], char str2[][ 10 ], int *count ) ;
+void explode( char str1[], char splitter[], char str2[][ 10 ], int *count ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 
 int main() {
     char in[ 100 ], out[ 100 ][ 10 ], splitter[ 100 ] ;
