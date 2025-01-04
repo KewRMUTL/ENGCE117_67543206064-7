@@ -27,7 +27,7 @@ uoY evaL I
 #include <stdio.h>
 #include <string.h>
 
-int reverse( char str1[], char str2[] ) ;
+int reverse( char str1[], char str2[] ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 
 int main() {
     char text[ 50 ] = "I Love You" ;  // กำหนดข้อความเริ่มต้นใน text
@@ -57,4 +57,4 @@ int reverse( char str1[], char str2[] ) {
     
     return 0 ;
     
-}//end reverse
+}//end function reverse
