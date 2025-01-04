@@ -27,7 +27,7 @@ Output
 #include <stdio.h>
 #include <string.h>
 
-char* reverse( char str1[] ) ;
+char* reverse( char str1[] ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address
 
 int main() {
     char text[ 50 ] = "I Love You" ;
@@ -46,8 +46,10 @@ char* reverse( char str1[] ) {
     }//end for reverse
 
     printf( "Output:\n" ) ;
-    for ( int i = 0 ; i < length; i++ ) {
-        printf( "%c" , reverse[i] ) ;
+    for ( int i = 0 ; i < length ; i++ ) {
+        printf( "%c" , reverse[ i ] ) ;
     }//end for print reverse
+
     return 0 ;
+
 }//end reverse
