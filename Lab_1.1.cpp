@@ -27,10 +27,10 @@ int main() {
     int input = 0 ;
 
     printf( "Enter start number : " ) ;    
-    if ( scanf( "%d" , &input ) != 1 ) {
+    if ( scanf( "%d" , &input ) != 1 ) {     //เช็กว่าเป็นเลขหรือไม่
         printf( "Please enter number only." ) ;
     } else {
-        for ( int i = 1 ; i <= input ; i++ ) {
+        for ( int i = 1 ; i <= input ; i++ ) {     //แสดงจำนวน
             printf( "[ %d ] Hello world \n" , i ) ;
         }//end for
         
