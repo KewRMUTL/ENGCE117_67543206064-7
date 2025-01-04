@@ -21,7 +21,7 @@ void SaveNode( struct studentNode *child, char n[], int a, char s, float g ) ;  
 void GoNext2( struct studentNode ***walk ) ;
 
 int main() {
-    char name[20] = "one";
+    char name[ 20 ] = "one";
     struct studentNode *start, *now1, **now2 ;
     start = ( struct studentNode * ) malloc( sizeof( struct studentNode ) ) ;
     SaveNode( start , name , 6, 'M', 3.11 ) ;
