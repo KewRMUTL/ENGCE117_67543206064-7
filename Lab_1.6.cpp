@@ -32,7 +32,7 @@ Enter matrix elements:
 
 #include <stdio.h>
 
-int* GetMatrix( int *row, int *col ) ;
+int* GetMatrix( int *row, int *col ) ;     //Pass by reference คือ มี &, [], * เปลี่ยน Address //Pass by value ตัวแปรธรรมดา
 
 int main() {
     int m, n ;                                 //ประกาศตัวแปรเก็บจำนวนแถวและคอลัมน์
